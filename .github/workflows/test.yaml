@@ -4,13 +4,13 @@ name: Test
 on:
   push:
     branches:
-      - test
+      - main
 
 env:
   NODE_VERSION: 18
 
 jobs:
-  Test:
+  BuildDockerImage:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,6 +24,10 @@ jobs:
       - name: Verify NodeJS installation
         run: |
           node -v
-        
+      - name: Build Docker Image
+        working-directory: src
+        run: |
+          docker build -t apix:latest .
+          
       
 
