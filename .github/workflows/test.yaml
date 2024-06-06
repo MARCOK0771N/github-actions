@@ -11,8 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: First step
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: List files
         run: |
-          echo "helo"
+          echo "hello"
+          ls -la
       
 
