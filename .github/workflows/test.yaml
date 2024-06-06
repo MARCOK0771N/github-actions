@@ -13,9 +13,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: List files
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16
+      - name: Verify NodeJS installation
         run: |
-          echo "hello"
-          ls -la
+          node -v
+        
       
 
