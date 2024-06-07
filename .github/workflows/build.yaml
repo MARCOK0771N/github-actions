@@ -45,6 +45,7 @@ jobs:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           REPOSITORY: marco-demo-aws
           IMAGE_TAG: ${{ github.sha }}
+        working-directory: src
         run: |
           docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
