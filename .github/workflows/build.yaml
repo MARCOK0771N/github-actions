@@ -6,6 +6,7 @@ on:
     branches:
       - test_aws
 
+
 env:
   NODE_VERSION: 18
 
